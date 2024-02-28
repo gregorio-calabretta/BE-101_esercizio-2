@@ -9,12 +9,13 @@ import java.util.UUID;
 @Table(name = "person")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
 
     public Person(@JsonProperty("id") UUID id, @JsonProperty("name") String name) {
         this.name = name;
+        this.id = id;
     }
     public Person() {
     }
