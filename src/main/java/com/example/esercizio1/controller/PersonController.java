@@ -1,4 +1,4 @@
-package com.example.esercizio1.api;
+package com.example.esercizio1.controller;
 
 import com.example.esercizio1.model.Person;
 import com.example.esercizio1.service.PersonService;

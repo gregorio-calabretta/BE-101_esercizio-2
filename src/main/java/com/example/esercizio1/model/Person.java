@@ -1,25 +1,27 @@
 package com.example.esercizio1.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import jakarta.persistence.*;
 
 import java.util.UUID;
-
+@Entity
+@Table(name = "person")
 public class Person {
-    private final UUID id;
-
-    private final String name;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private UUID id;
+    private String name;
 
     public Person(@JsonProperty("id") UUID id, @JsonProperty("name") String name) {
-        this.id = id;
         this.name = name;
     }
-
+    public Person() {
+    }
     public UUID getId() {
         return id;
     }
     public String getName(){
         return name;
     }
-
 }
