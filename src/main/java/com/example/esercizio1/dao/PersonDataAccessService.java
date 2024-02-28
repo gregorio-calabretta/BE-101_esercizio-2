@@ -1,6 +1,7 @@
 package com.example.esercizio1.dao;
 
 import com.example.esercizio1.model.Person;
+import com.example.esercizio1.repository.PersonRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -10,8 +11,7 @@ import java.util.UUID;
 
 
 @Repository("postgres")
-public class PersonDataAccessService implements PersonDao{
-
+public class PersonDataAccessService implements PersonRepository {
 
     @Override
     public int insertPerson(UUID id, Person person) {
